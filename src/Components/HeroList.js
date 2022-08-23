@@ -10,7 +10,8 @@ const HeroList = ({ heroes, filterName, searchRate }) => {
           hero.name
             .toLowerCase()
             .trim()
-            .includes(filterName.toLowerCase().trim()) && hero.rating >= searchRate
+            .includes(filterName.toLowerCase().trim()) 
+            
         )
         .map((hero) => (
           <div key={hero.id}>

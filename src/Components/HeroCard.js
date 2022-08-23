@@ -1,9 +1,10 @@
 import React from "react";
-import Rating from "./Rating";
+
 import {
   Card,
   CardContent,
   CardMedia,
+  Rating,
   Typography,
 } from "@mui/material";
 
