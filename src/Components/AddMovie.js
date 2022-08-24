@@ -14,7 +14,7 @@ const style = {
   p: 4,
 };
 
-const AddHero = ({heroes, setHeroes}) => {
+const AddMovie = ({movies, setmovies}) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -24,10 +24,10 @@ const AddHero = ({heroes, setHeroes}) => {
   const [addPictureURL, setAddPictureURL] = useState("");
   const [addRating, setRating] = useState("");
 
-  const AddHeroFunction = (e) => {
+  const AddMovieFunction = (e) => {
     e.preventDefault();
-    setHeroes([
-        ...heroes,
+    setmovies([
+        ...movies,
         {
             id: Math.random(),
             name: addName,
@@ -42,7 +42,7 @@ const AddHero = ({heroes, setHeroes}) => {
   return (
     <div>
       <Button className="add_button" variant="contained" onClick={handleOpen}>
-        Add a new Hero
+        Add a new movie
       </Button>
       <Modal
         open={open}
@@ -52,11 +52,11 @@ const AddHero = ({heroes, setHeroes}) => {
       >
         <Box component="form" sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Add a new Hero
+            Add a new movie
           </Typography>
           <TextField
             name="name"
-            label="Hero's Name"
+            label="movie's Name"
             variant="outlined"
             onChange={(e) => setAddName(e.target.value)}
             sx={{margin: "1rem 0 0.5rem"}}
@@ -64,7 +64,7 @@ const AddHero = ({heroes, setHeroes}) => {
           />
           <TextField
             name="universe"
-            label="Hero's Universe"
+            label="movie's Universe"
             variant="outlined"
             onChange={(e) => setAddUniverse(e.target.value)}
             sx={{margin: "0.5rem 0"}}
@@ -72,7 +72,7 @@ const AddHero = ({heroes, setHeroes}) => {
           />
           <TextField
             name="title"
-            label="Hero's Picture URL"
+            label="movie's Picture URL"
             variant="outlined"
             onChange={(e) => setAddPictureURL(e.target.value)}
             sx={{margin: "0.5rem 0 1rem"}}
@@ -95,7 +95,7 @@ const AddHero = ({heroes, setHeroes}) => {
           <Button
             className="modal-button-add"
             variant="primary"
-            onClick={AddHeroFunction}
+            onClick={AddMovieFunction}
           >
             Add
           </Button>
@@ -105,4 +105,4 @@ const AddHero = ({heroes, setHeroes}) => {
   );
 };
 
-export default AddHero;
+export default AddMovie;

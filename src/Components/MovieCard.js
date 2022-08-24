@@ -8,30 +8,27 @@ import {
   Typography,
 } from "@mui/material";
 
-const HeroCard = ({hero}) => {
+const MovieCard = ({movie}) => {
   return (
     <Card sx={{ width: "15rem", height: "30rem" }}>
       <CardMedia
         component="img"
         height="140"
-        image={hero.pictureURL}
-        alt="Hero Picture"
+        image={movie.pictureURL}
+        alt="movie Picture"
         sx={{ height: "25rem"}}
       />
       <CardContent>
-      <div className='hero-rating'>
+      <div className='movie-rating'>
 
-<Rating name="read-only" value={hero.rating} readOnly />
+<Rating name="read-only" value={movie.rating} readOnly />
 </div>
         <Typography gutterBottom variant="h5" component="div">
-          {hero.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {hero.universe}
+          {movie.name}
         </Typography>
       </CardContent>
     </Card>
   );
 };
 
-export default HeroCard;
+export default MovieCard;

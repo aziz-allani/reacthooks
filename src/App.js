@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import SearchAppBar from "./Components/SearchAppBar";
-import HeroList from "./Components/HeroList";
-import { heroData } from "./Data";
-import AddHero from "./Components/AddHero";
+import MovieList from "./Components/MovieList";
+import { movieData } from "./Data";
+import AddMovie from "./Components/AddMovie";
 
 
 function App() {
-  const [heroes, setHeroes] = useState(heroData);
+  const [movies, setMovies] = useState(movieData);
   const [filterName, setFilterName] = useState("");
   const [searchRate, setSearchRate] = useState(0);
 
@@ -16,10 +16,10 @@ function App() {
       <div className="header">
         <SearchAppBar setFilterName={setFilterName} setSearchRate={setSearchRate} searchRate={searchRate} />
       </div>
-      <div className="hero-add">
-        <AddHero heroes={heroes} setHeroes={setHeroes} />
+      <div className="movie-add">
+        <AddMovie movies={movies} setmovies={setMovies} />
       </div>
-      <HeroList heroes={heroes} setHeroes={setHeroes} filterName={filterName} />
+      <MovieList movies={movies} setMovies={setMovies} filterName={filterName} searchRate={searchRate} />
     </div>
   );
 }

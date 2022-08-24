@@ -74,7 +74,7 @@ export default function SearchAppBar({setFilterName, setSearchRate, searchRate})
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            HEROES LIST
+            movies LIST
           </Typography>
           <Typography>
           <Rating
